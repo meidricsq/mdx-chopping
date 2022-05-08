@@ -4,7 +4,7 @@ Chopping cars for car parts which can be converted into materials ( WIP )
 
 # Install
 
-Add these 4 items into your qb-core/shared/items.lua along with the photos from the img folder
+Add these 4 items into your qb-core/shared/items.lua along with the photos
 ```
         ['door'] 						 = {['name'] = 'door', 							['label'] = 'Door', 					['weight'] = 0, 		['type'] = 'item', 		['image'] = 'door.png', 				['unique'] = false, 	['useable'] = false, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
 	['hood'] 						 = {['name'] = 'hood', 							['label'] = 'Hood', 					['weight'] = 0, 		['type'] = 'item', 		['image'] = 'hood.png', 				['unique'] = false, 	['useable'] = false, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
