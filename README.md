@@ -40,4 +40,7 @@ Add this to your qb-target/init.lua in Config.Peds
 
 Then set up your location in config and you are good to go!
 
+# Love to QB-Core
+
+Love to qb-core and qb-scrapyard thats from where i got the `IsVehicleValid` function
 
