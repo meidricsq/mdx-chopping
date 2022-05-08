@@ -2,6 +2,8 @@
 
 Chopping cars for car parts which can be converted into materials ( WIP )
 
+[Preview](https://www.youtube.com/watch?v=26pRXRSw1BM)
+
 # Install
 
 Add these 4 items into your qb-core/shared/items.lua along with the photos
