@@ -19,3 +19,8 @@ Config.Items = {
     ["trunk"] = "trunk",
     ["wheels"] = "wheels",
 }
+
+Config.Luck = math.random(1,100)
+Config.LuckItems = {
+    "lockpick",
+}
