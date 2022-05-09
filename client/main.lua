@@ -140,9 +140,10 @@ RegisterNetEvent("mdx-chopshop:client:startChop", function()
                             disableMouse = false,
                             disableCombat = true,
                         }, {}, {}, {}, function()
-                            local chance = math.random(1,100)
+                            local item = Config.LuckItems[math.random(1, #Config.LuckItems)]
+                            local chance = Config.Luck
                             if chance >= 60 then
-                                TriggerServerEvent("mdx-chopshop:server:getItems", "lockpick", 1)
+                                TriggerServerEvent("mdx-chopshop:server:getItems", item, 1)
                             end
                             TriggerServerEvent("mdx-chopshop:server:getItems", Config.Items["trunk"], 1)
                             SetVehicleDoorOpen(vehicle, 5, false, true)
