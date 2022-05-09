@@ -3,7 +3,77 @@ local hasList = false
 local finished = false
 local carmodel = Config.Vehicles[math.random(1, #Config.Vehicles)]
 local location = Config.Locations.CarSpawn[math.random(1, #Config.Locations.CarSpawn)]
-local blip = nil
+
+RegisterNetEvent("mdx-chopshop:client:exchangeItemsMenu", function()
+    local menu = {
+        {
+            header = "Exchange Parts",
+            txt = "",
+        },
+        {
+            header = "Exchange Door",
+            txt = "Exchange a door for materials",
+            params = {
+                event = "mdx-chopshop:client:exchangeItems",
+                args = {
+                    itemremove = "door",
+                    item = "metalscrap",
+                    amountremove = 1,
+                    amount = math.random(100,200)
+                },
+                isServer = false
+            }
+        },
+        {
+            header = "Exchange Trunk",
+            txt = "Exchange a trunk for materials",
+            params = {
+                event = "mdx-chopshop:client:exchangeItems",
+                args = {
+                    itemremove = "trunk",
+                    item = "metalscrap",
+                    amountremove = 1,
+                    amount = math.random(100,200)
+                },
+                isServer = false
+            }
+        },
+        {
+            header = "Exchange Hood",
+            txt = "Exchange a hood for materials",
+            params = {
+                event = "mdx-chopshop:client:exchangeItems",
+                args = {
+                    itemremove = "hood",
+                    item = "metalscrap",
+                    amountremove = 1,
+                    amount = math.random(100,200)
+                },
+                isServer = false
+            }
+        },
+        {
+            header = "Exchange Wheel",
+            txt = "Exchange a wheel for materials",
+            params = {
+                event = "mdx-chopshop:client:exchangeItems",
+                args = {
+                    itemremove = "wheels",
+                    item = "metalscrap",
+                    amountremove = 1,
+                    amount = math.random(100,200)
+                },
+                isServer = false
+            }
+        },
+    }
+
+    exports['qb-menu']:openMenu(menu)
+end)
+
+RegisterNetEvent("mdx-chopshop:client:exchangeItems", function(data)
+    TriggerServerEvent("mdx-chopshop:server:ExchangeItems", data.itemremove, data.item, data.amountremove, data.amount)
+end)
 
 
 RegisterNetEvent("mdx-chopshop:client:getList", function()
