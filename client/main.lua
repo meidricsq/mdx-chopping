@@ -256,6 +256,25 @@ Citizen.CreateThread(function()
             end
         end
     end
+    exports['qb-target']:SpawnPed({
+        model = 's_m_y_armymech_01',
+        coords = Config.Ped,
+        minusOne = true,
+        freeze = true,
+        invincible = true,
+        blockevents = true,
+        target = {
+            options = {
+                {
+                    type = 'client',
+                    event = "mdx-chopshop:client:getList", 
+                    icon = 'fas fa-bars',
+                    label = 'Get List',
+                }
+            },
+            distance = 2.5,
+        }
+    })
 end)
 
 function IsVehicleValid(vehicleModel)

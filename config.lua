@@ -13,6 +13,8 @@ Config.Locations = {
     }
 }
 
+Config.Ped = vector4(2403.52, 3127.87, 48.15, 245.59) -- Coordinates of the ped to get the list from
+
 Config.Items = {
     ["door"] = "door",
     ["hood"] = "hood",
