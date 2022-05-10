@@ -279,6 +279,27 @@ exports['qb-target']:SpawnPed({
     }
 })
 
+exports['qb-target']:SpawnPed({
+    model = 's_m_y_armymech_01',
+    coords = Config.ExchangePed,
+    minusOne = true,
+    freeze = true,
+    invincible = true,
+    blockevents = true,
+    target = {
+	useModel = false,
+    options = {
+       {
+    type = 'client',
+    event = "mdx-chopshop:client:exchangeItemsMenu", 
+    icon = 'fas fa-bars',
+    label = 'Exchange Parts',
+          }
+        },
+    distance = 2.5,
+    }
+})
+
 function IsVehicleValid(vehicleModel)
 	local retval = false
 	if carmodel ~= nil then
