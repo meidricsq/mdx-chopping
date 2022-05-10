@@ -266,11 +266,12 @@ exports['qb-target']:SpawnPed({
     invincible = true,
     blockevents = true,
     target = {
+	useModel = false,
     options = {
        {
     type = 'client',
-     event = "mdx-chopshop:client:getList", 
-     icon = 'fas fa-bars',
+    event = "mdx-chopshop:client:getList", 
+    icon = 'fas fa-bars',
     label = 'Get List',
           }
         },
