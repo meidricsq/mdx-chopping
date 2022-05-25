@@ -114,7 +114,7 @@ RegisterNetEvent("mdx-chopshop:client:startChop", function()
                 SetVehicleDoorOpen(vehicle, 1, false, true)
                 Wait(2000)
                 SetVehicleDoorBroken(vehicle, 1, true)
-                QBCore.Functions.Progressbar('chopveh', 'Chopping the back left door', 5000, false, true, {
+                QBCore.Functions.Progressbar('chopveh', 'Chopping the left back door', 5000, false, true, {
                     disableMovement = true,
                     disableCarMovement = true,
                     disableMouse = false,
@@ -124,7 +124,7 @@ RegisterNetEvent("mdx-chopshop:client:startChop", function()
                     SetVehicleDoorOpen(vehicle, 2, false, true)
                     Wait(2000)
                     SetVehicleDoorBroken(vehicle, 2, true)
-                    QBCore.Functions.Progressbar('chopveh', 'Chopping the back right door', 5000, false, true, {
+                    QBCore.Functions.Progressbar('chopveh', 'Chopping the right back door', 5000, false, true, {
                         disableMovement = true,
                         disableCarMovement = true,
                         disableMouse = false,
