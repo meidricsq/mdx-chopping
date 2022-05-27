@@ -1,6 +1,6 @@
 # MDX-CHOPPING
 
-Chopping cars for car parts which can be converted into materials ( WIP )
+Chopping cars for car parts which can be converted into materials
 
 [Preview](https://www.youtube.com/watch?v=26pRXRSw1BM)
 
