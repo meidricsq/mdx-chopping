@@ -3,6 +3,7 @@ local hasList = false
 local finished = false
 local carmodel = Config.Vehicles[math.random(1, #Config.Vehicles)]
 local location = Config.Locations.CarSpawn[math.random(1, #Config.Locations.CarSpawn)]
+local isChopping = false
 
 RegisterNetEvent("mdx-chopshop:client:exchangeItemsMenu", function()
     local menu = {
@@ -92,6 +93,7 @@ RegisterNetEvent("mdx-chopshop:client:getList", function()
 end)
 
 RegisterNetEvent("mdx-chopshop:client:startChop", function()
+    isChopping = true
     local vehicle = GetVehiclePedIsIn(PlayerPedId(), true)
     if not finished and hasList then
         QBCore.Functions.Progressbar('chopveh', 'Chopping the left door', 5000, false, true, {
@@ -193,6 +195,7 @@ RegisterNetEvent("mdx-chopshop:client:startChop", function()
                                                 finished = true
                                                 hasList = false
                                                 DeleteVehicle(vehicle)
+                                                isChopping = false
                                                 QBCore.Functions.Notify('Take these to someone that knows what to do with them', 'primary', 7500)
                                             end, function()
                                                 QBCore.Functions.Notify('Cancelled', 'error', 7500)
@@ -234,7 +237,7 @@ Citizen.CreateThread(function()
         local pos = GetEntityCoords(PlayerPedId())
         if #(pos - vector3(Config.Locations["ScrapVehicle"].x, Config.Locations["ScrapVehicle"].y, Config.Locations["ScrapVehicle"].z)) < 10 then
             inRange = true
-            if IsPedInAnyVehicle(PlayerPedId()) then
+            if IsPedInAnyVehicle(PlayerPedId()) and not isChopping then
                 DrawMarker(2, Config.Locations["ScrapVehicle"].x, Config.Locations["ScrapVehicle"].y, Config.Locations["ScrapVehicle"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 200, 200, 222, false, false, false, true, false, false, false)
                 if #(pos - vector3(Config.Locations["ScrapVehicle"].x, Config.Locations["ScrapVehicle"].y, Config.Locations["ScrapVehicle"].z)) < 2 then
                     DrawText3D(Config.Locations["ScrapVehicle"].x, Config.Locations["ScrapVehicle"].y, Config.Locations["ScrapVehicle"].z, "~g~E~w~ - Scrap Vehicle") 
@@ -265,6 +268,7 @@ exports['qb-target']:SpawnPed({
     freeze = true,
     invincible = true,
     blockevents = true,
+    spawnNow = true,
     target = {
 	useModel = false,
     options = {
@@ -286,6 +290,7 @@ exports['qb-target']:SpawnPed({
     freeze = true,
     invincible = true,
     blockevents = true,
+    spawnNow = true,
     target = {
 	useModel = false,
     options = {
